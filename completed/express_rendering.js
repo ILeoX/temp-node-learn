@@ -11,11 +11,3 @@ app.all(`*`, (req, res) => {
 app.listen(5000, () => {
   console.log('Server is listening on PORT: 5000')
 })
-
-//app.get
-//app.post
-//app.put
-//app.delete
-//app.all
-//app.use
-//app.listen

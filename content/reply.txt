@@ -1,7 +1,5 @@
-Here is the result: A king types. Bow low. 
-Here is the result: A king types. Bow low. 
-Here is the result: A king types. Bow low. 
-Here is the result: A king types. Bow low. 
-Here is the result: A king types. Bow low. 
-Here is the result: A king types. Bow low. 
-Here is the result: A king types. Bow low. 
+Hello World! A king types. Bow low.
+Hello World! A king types. Bow low.
+Hello World! A king types. Bow low.
+Hello World! A king types. Bow low.
+Hello World! A king types. Bow low.
