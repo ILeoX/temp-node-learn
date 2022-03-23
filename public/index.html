@@ -12,5 +12,41 @@
     <h3>Hello World</h3>
 
     <img src="./img/sponge1.jpg" alt="spongebob" />
+
+    <form method="post">
+      <div>
+        <label for="name"> Name </label>
+
+        <input type="text" name="name" id="name" placeholder="Name" />
+
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+
+    <div class="result"></div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js"
+      integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script>
+      const result = document.querySelector('.result')
+
+      const fetchPeople = async () => {
+        try {
+          const { data } = await axios.get('/api/people')
+
+          const people = data.data.map((person) => {
+            return `<h5> ${person.name} </h5>`
+          })
+
+          result.innerHTML = people.join('')
+        } catch (err) {
+          result.innerHTML = `Cannot Fetch Data`
+        }
+      }
+    </script>
   </body>
 </html>

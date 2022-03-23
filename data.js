@@ -227,14 +227,17 @@ const products = [
 
 const people = [
   {
+    id: 1,
     name: 'Amanda',
     age: 34,
   },
   {
+    id: 2,
     name: 'Franklin',
     age: 24,
   },
   {
+    id: 3,
     name: 'Ahmad',
     age: 18,
   },
