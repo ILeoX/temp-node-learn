@@ -1,15 +1,11 @@
 const express = require('express')
-const morgan = require('morgan')
 const app = express()
 
 const logger = require('./logger')
-const authorize = require('./authorize')
 
 //app.use('api/', logger)
-//using third party middlewares
 
-app.use([logger, authorize])
-app.use(morgan('tiny'))
+app.use('api/', logger)
 
 app.get('/', (req, res) => {
   res.send('Home Page')
