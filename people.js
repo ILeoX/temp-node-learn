@@ -1,31 +1,13 @@
 const express = require('express')
-const app = express()
+const router = express.Router()
+
 let { people } = require('./data')
 
-//static assets
-app.use(express.static('./public'))
-
-//parse form data
-app.use(express.urlencoded({ extended: false }))
-app.post('/login', (req, res) => {
-  console.log(req.body)
-
-  const { name } = req.body
-
-  if (name) {
-    return res.status(201).send({ success: true, person: name })
-  } else {
-    return res
-      .status(400)
-      .json({ success: false, msg: 'please privude name value' })
-  }
-})
-
-app.get('/api/people', (req, res) => {
+router.get('/api/people', (req, res) => {
   res.status(200).json({ success: true, data: people })
 })
 
-app.post('/api/postman/people', (req, res) => {
+router.post('/api/postman/people', (req, res) => {
   const { name } = req.body
 
   if (!name) {
@@ -37,7 +19,7 @@ app.post('/api/postman/people', (req, res) => {
   res.status(201).send({ success: true, data: [...people, name] })
 })
 
-app.put('/api/people/:id', (req, res) => {
+router.put('/api/people/:id', (req, res) => {
   const { id } = req.params
   const { name } = req.body
 
@@ -62,6 +44,4 @@ app.put('/api/people/:id', (req, res) => {
   res.status(200).json({ success: true, data: newPeople })
 })
 
-app.listen(5000, () => {
-  console.log('Server running on PORT 5000')
-})
+module.exports = router
